@@ -1,0 +1,68 @@
+---
+import Base from '../../layouts/Base.astro';
+import CurveMark from '../../components/CurveMark.astro';
+---
+<Base
+  title="Perpetual Rates — The CIRCA Protocol — Jake Boersma"
+  description="A mathematical framework for continuous-tenor interest rate swaps on-chain."
+  active="writing"
+>
+  <div class="wrap">
+    <div class="titleblock">
+      <div class="kicker">Working paper · v0.2 · 2025</div>
+      <h1>Perpetual Rates</h1>
+      <div class="byline2">A Mathematical Framework for Continuous-Tenor Interest Rate Swaps On-Chain — The CIRCA Protocol</div>
+      <div class="links">
+        <a href="#">Full paper (PDF)</a>
+        <a href="/writing">← Writing</a>
+        <a href="/about">Contact</a>
+      </div>
+    </div>
+
+    <span class="depthtag">Overview</span>
+    <div class="abstract">
+      <div class="h">Abstract</div>
+      <p>The interest rate swap is the largest derivatives market on earth — roughly $469T in notional outstanding as of mid-2024, and 81% of all interest-rate derivatives. Its structure has barely changed in four decades: bilaterally documented, centrally cleared, and organized around a discrete set of benchmark tenors. CIRCA is a protocol-level framework for implementing interest rate swaps on-chain as a structurally better instrument, improving on the TradFi equivalent along four provable dimensions.</p>
+    </div>
+
+    <CurveMark variant="figure" />
+
+    <div class="sec">
+      <h3><span class="no">1</span>The contribution</h3>
+      <p>Rather than re-implementing the TradFi swap in a new medium, CIRCA (Continuous Interest Rate Curve Architecture) uses programmable settlement and continuous parameterization to define an instrument with capabilities the legacy market cannot offer: continuous tenor, persistent duration via a perpetual funding mechanism, and an on-chain, manipulation-resistant benchmark rate.</p>
+    </div>
+
+    <div class="sec">
+      <h3><span class="no">2</span>What is proven</h3>
+      <p>Improvement over the TradFi equivalent along four provable dimensions, derived formally and validated against historical SOFR data:</p>
+      <ol class="results">
+        <li>a persistent-duration / DV01 result formalizing the continuous-exposure property;</li>
+        <li>a manipulation-profit bound on the benchmark and settlement mechanism;</li>
+        <li>a capital-efficiency result showing a 15–40% improvement under stated book conditions;</li>
+        <li>an explicit initial-margin framework with a defined margin period of risk.</li>
+      </ol>
+    </div>
+
+    <span class="depthtag t2">Technical detail</span>
+    <div class="sec">
+      <h3><span class="no">3</span>Persistent duration, formally</h3>
+      <p>The central novelty is a position that holds its duration indefinitely rather than rolling down toward a maturity date. Where a fixed-tenor swap's DV01 decays as it approaches expiry, CIRCA's perpetual funding mechanism maintains the position's sensitivity to the underlying rate — a genuinely new capability, not an incremental improvement.</p>
+      <div class="defbox">
+        <span class="lbl">Definition (informal)</span>
+        A CIRCA position is marked linearly against the on-chain rate curve, with no discount-factor decay over a fixed horizon; its duration is therefore a function of the chosen tenor point alone, held constant by continuous funding settlement.
+      </div>
+      <p>The full derivation, the manipulation-profit bound, the capital-efficiency proposition and its conditions, and the initial-margin construction are developed in the complete paper.</p>
+    </div>
+
+    <div class="sec">
+      <h3><span class="no">4</span>What it does not claim</h3>
+      <p>The framework is deliberately honest about where TradFi retains the advantage. Legal enforceability under ISDA documentation, counterparty KYC and whitelisting, and institutional eligibility are real prerequisites that protocol mathematics alone cannot resolve. CIRCA establishes the quantitative case for moving rate risk on-chain; it does not pretend the surrounding legal and regulatory stack is already assembled.</p>
+    </div>
+
+    <span class="depthtag t3">Full text</span>
+    <div class="fullpaper">
+      <a href="#">Read the full paper (~20,000 words) →</a>
+      <span class="note">Working draft, v0.2 — internal review complete; external review in progress.</span>
+    </div>
+  </div>
+</Base>

@@ -1,0 +1,66 @@
+---
+import Base from '../layouts/Base.astro';
+import CurveMark from '../components/CurveMark.astro';
+---
+<Base title="Jake Boersma — Quantitative Research" active="home">
+  <div class="wrap">
+    <header class="home-head">
+      <div class="kicker">Quantitative Research — Interest-Rate Markets</div>
+      <h1>Jake Boersma</h1>
+      <div class="byline">Fixed income &amp; derivatives, applied to the design of on-chain rate markets.</div>
+      <div class="links">
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="mailto:jake.m.boersma@gmail.com">jake.m.boersma@gmail.com</a>
+        <a href="#">Résumé</a>
+      </div>
+    </header>
+
+    <CurveMark variant="mark" />
+
+    <section class="block">
+      <span class="label">About</span>
+      <p class="lead">I spent roughly three years in fixed income and securitization — pricing and structuring RMBS, and rebuilding prepayment and option-adjusted-spread models at Invictus Capital Partners — after starting in credit and fraud analytics at Capital One.</p>
+      <p class="lead">Since 2024 I've worked independently in digital assets: on-chain quantitative research, protocol diligence, and original work on bringing interest-rate derivatives on-chain, culminating in the CIRCA protocol paper.</p>
+    </section>
+
+    <section class="block">
+      <span class="label">Selected Work</span>
+      <ul class="pubs">
+        <li class="anchor">
+          <a href="/writing/perpetual-rates">
+            <span>
+              <span class="t">Perpetual Rates: Continuous-Tenor Interest Rate Swaps On-Chain <span class="arrow">→</span></span>
+              <span class="desc">An original protocol paper taking the $469T interest-rate swap market on-chain as a structurally better instrument — with formal proofs and empirical SOFR validation.</span>
+            </span>
+            <span class="m">Working paper · v0.2</span>
+          </a>
+        </li>
+        <li>
+          <a href="/projects">
+            <span>
+              <span class="t">On-chain rate &amp; yield tooling</span>
+              <span class="desc">Python tooling for on-chain rate data, curve construction, and protocol monitoring.</span>
+            </span>
+            <span class="m">Python · Research</span>
+          </a>
+        </li>
+        <li>
+          <a href="/projects">
+            <span>
+              <span class="t">DeFi protocol diligence</span>
+              <span class="desc">Fundamental and on-chain evaluation of early-stage protocols and token mechanics.</span>
+            </span>
+            <span class="m">On-chain</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span><span class="t placeholder">[ Next research piece — add here ]</span></span>
+            <span class="m">Draft</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </div>
+</Base>

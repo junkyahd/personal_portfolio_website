@@ -1,0 +1,121 @@
+/* =========================================================
+   Jake Boersma — Portfolio · "Working Paper" design system
+   ========================================================= */
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+a{ color:inherit; text-decoration:none; }
+
+:root{
+  --bg:#F6F6F2; --ink:#1a1a20; --muted:#5d5d63; --accent:#27408B; --rule:#d9d9d1;
+}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:'Newsreader',Georgia,serif; -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+}
+
+.wrap{ max-width:720px; margin:0 auto; padding:0 28px; }
+.wrap-wide{ max-width:900px; margin:0 auto; padding:0 28px; }
+
+/* ---------- masthead (all pages) ---------- */
+.masthead{ position:sticky; top:0; z-index:10; background:rgba(246,246,242,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--rule); }
+.masthead .inner{ max-width:900px; margin:0 auto; padding:16px 28px; display:flex; justify-content:space-between; align-items:baseline; }
+.masthead .name{ font-size:18px; font-weight:600; letter-spacing:-.01em; }
+.masthead nav{ display:flex; gap:22px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+.masthead nav a{ padding-bottom:3px; border-bottom:1px solid transparent; }
+.masthead nav a:hover, .masthead nav a.active{ color:var(--accent); border-color:var(--accent); }
+
+/* ---------- shared bits ---------- */
+.label{ font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); }
+.rule{ border:0; border-top:1px solid var(--rule); margin:0; }
+.placeholder{ color:#9a9a94; font-style:italic; }
+
+/* ---------- HOME (researcher header) ---------- */
+.home-head{ padding:62px 0 30px; }
+.home-head .kicker{ font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); }
+.home-head h1{ font-size:clamp(44px,9vw,80px); font-weight:500; letter-spacing:-.02em; line-height:.98; margin:16px 0 14px; }
+.home-head .byline{ font-size:clamp(18px,2.6vw,22px); font-style:italic; color:#3a3a40; max-width:34ch; line-height:1.4; }
+.home-head .links{ margin-top:24px; font-family:'JetBrains Mono',monospace; font-size:12px; display:flex; gap:16px; flex-wrap:wrap; color:var(--muted); }
+.home-head .links a{ border-bottom:1px solid transparent; }
+.home-head .links a:hover{ color:var(--accent); border-color:var(--accent); }
+
+.sig{ padding:6px 0 0; }
+.sig svg{ width:100%; height:auto; display:block; }
+
+.block{ padding:38px 0; border-top:1px solid var(--rule); }
+.block .label{ margin-bottom:18px; display:block; }
+.lead{ font-size:19px; line-height:1.75; color:#2c2c32; max-width:64ch; }
+.lead + .lead{ margin-top:14px; }
+
+/* publications-style list */
+.pubs{ list-style:none; }
+.pubs li a{ display:grid; grid-template-columns:1fr auto; gap:18px; align-items:baseline; padding:18px 0; border-bottom:1px solid var(--rule); }
+.pubs li:first-child a{ padding-top:6px; }
+.pubs .t{ font-size:20px; line-height:1.35; transition:color .15s; }
+.pubs li a:hover .t{ color:var(--accent); }
+.pubs .desc{ display:block; font-size:15px; color:var(--muted); margin-top:5px; font-style:italic; }
+.pubs .m{ font-family:'JetBrains Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); white-space:nowrap; }
+.pubs .anchor .t{ font-weight:600; }
+.pubs .anchor .arrow{ color:var(--accent); }
+
+/* inner page heads */
+.page-head{ padding:54px 0 10px; }
+.page-head h2{ font-size:clamp(32px,6vw,48px); font-weight:500; letter-spacing:-.015em; }
+.page-head .sub{ margin-top:14px; font-size:18px; color:#3a3a40; max-width:56ch; line-height:1.6; font-style:italic; }
+
+.about-body{ padding:30px 0 0; }
+.about-body p{ font-size:18px; line-height:1.8; color:#2c2c32; max-width:64ch; }
+.about-body p + p{ margin-top:16px; }
+.contactline{ font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--muted); margin-top:28px; }
+.contactline a{ color:var(--accent); }
+
+footer.site{ padding:48px 0; border-top:1px solid var(--rule); font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--muted); }
+.footrow{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+footer.site a:hover{ color:var(--accent); }
+
+/* ---------- CIRCA paper page ---------- */
+.titleblock{ padding:58px 0 26px; text-align:center; }
+.titleblock .kicker{ font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); }
+.titleblock h1{ font-size:clamp(34px,6vw,54px); font-weight:500; letter-spacing:-.01em; line-height:1.08; margin:16px 0 12px; }
+.titleblock .byline2{ font-size:16px; color:var(--muted); font-style:italic; max-width:46ch; margin:0 auto; }
+.titleblock .links{ margin-top:22px; font-family:'JetBrains Mono',monospace; font-size:12px; display:flex; gap:18px; justify-content:center; flex-wrap:wrap; }
+.titleblock .links a{ color:var(--accent); border-bottom:1px solid transparent; }
+.titleblock .links a:hover{ border-color:var(--accent); }
+
+.abstract{ border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:30px 0; margin:8px 0 34px; }
+.abstract .h{ font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); text-align:center; margin-bottom:14px; }
+.abstract p{ font-size:18px; line-height:1.7; text-align:justify; }
+
+.figure{ margin:34px 0; text-align:center; }
+.figure svg{ width:100%; max-width:560px; height:auto; }
+.figure figcaption{ font-size:13px; color:var(--muted); margin-top:10px; font-style:italic; }
+
+.depthtag{ font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#fff; background:var(--accent); padding:4px 10px; border-radius:3px; display:inline-block; margin:8px 0 16px; }
+.depthtag.t2{ background:#5d5d63; }
+.depthtag.t3{ background:var(--ink); }
+.sec{ padding:24px 0; border-top:1px solid var(--rule); }
+.sec h3{ font-size:24px; font-weight:600; margin-bottom:12px; }
+.sec h3 .no{ font-family:'JetBrains Mono',monospace; font-size:14px; color:var(--accent); margin-right:12px; font-weight:400; }
+.sec p{ font-size:17.5px; line-height:1.75; color:#2c2c32; }
+.sec p + p{ margin-top:14px; }
+ol.results{ list-style:none; counter-reset:r; padding:0; margin-top:6px; }
+ol.results li{ padding:12px 0; border-bottom:1px dotted var(--rule); font-size:16.5px; line-height:1.5; display:flex; gap:14px; }
+ol.results li:last-child{ border-bottom:0; }
+ol.results li::before{ counter-increment:r; content:"("counter(r,lower-roman)")"; font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--accent); flex-shrink:0; }
+.defbox{ border-left:3px solid var(--accent); background:rgba(39,64,139,.04); padding:16px 20px; margin:18px 0; font-size:16px; line-height:1.6; }
+.defbox .lbl{ font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:6px; }
+.fullpaper{ text-align:center; padding:42px 0; border-top:1px solid var(--rule); }
+.fullpaper a{ font-family:'JetBrains Mono',monospace; font-size:14px; color:#fff; background:var(--accent); padding:13px 26px; border-radius:6px; display:inline-block; }
+.fullpaper .note{ display:block; margin-top:12px; font-size:13px; color:var(--muted); font-style:italic; }
+
+/* curve draw-on animation */
+.draw{ stroke-dasharray:1400; stroke-dashoffset:1400; animation:draw 2.4s cubic-bezier(.6,0,.2,1) forwards; }
+@keyframes draw{ to{ stroke-dashoffset:0; } }
+@media (prefers-reduced-motion:reduce){ .draw{ animation:none; stroke-dashoffset:0; } }
+
+@media (max-width:640px){
+  .masthead nav{ gap:14px; }
+  .pubs li a{ grid-template-columns:1fr; gap:6px; }
+  .pubs .m{ font-size:10px; }
+}
