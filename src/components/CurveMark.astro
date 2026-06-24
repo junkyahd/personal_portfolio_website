@@ -1,0 +1,23 @@
+---
+// variant: "mark" (slim letterhead curve) | "figure" (labeled Figure 1)
+const { variant = 'mark' } = Astro.props;
+---
+{variant === 'mark' && (
+  <div class="sig">
+    <svg viewBox="0 0 900 90" preserveAspectRatio="none" aria-hidden="true">
+      <path class="draw" d="M0,78 C180,75 250,40 440,30 S760,16 900,13" fill="none" stroke="#27408B" stroke-width="1.5"/>
+    </svg>
+  </div>
+)}
+{variant === 'figure' && (
+  <figure class="figure">
+    <svg viewBox="0 0 600 220" aria-hidden="true">
+      <line x1="40" y1="190" x2="580" y2="190" stroke="#bdbdb5" stroke-width="1"/>
+      <line x1="40" y1="20" x2="40" y2="190" stroke="#bdbdb5" stroke-width="1"/>
+      <path class="draw" d="M40,170 C180,166 240,96 360,78 S520,52 580,46" fill="none" stroke="#27408B" stroke-width="2"/>
+      <text x="300" y="212" font-family="JetBrains Mono" font-size="10" fill="#5d5d63" text-anchor="middle">tenor →</text>
+      <text x="20" y="105" font-family="JetBrains Mono" font-size="10" fill="#5d5d63" text-anchor="middle" transform="rotate(-90 20 105)">rate →</text>
+    </svg>
+    <figcaption>Figure 1 — The continuous tenor curve: exposure at any point, not a fixed grid of standard maturities.</figcaption>
+  </figure>
+)}

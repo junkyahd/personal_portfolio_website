@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/Base.astro';
+import { writing } from '../../data/writing.js';
+---
+<Base title="Writing & Research — Jake Boersma" active="writing">
+  <div class="wrap">
+    <div class="page-head">
+      <h2>Writing &amp; Research</h2>
+      <div class="sub">Original research on interest-rate markets — traditional and on-chain. Writing is where the thinking lives, so it leads.</div>
+    </div>
+
+    <section class="block">
+      <ul class="pubs">
+        {writing.map((w) => (
+          <li class={w.anchor ? 'anchor' : ''}>
+            <a href={w.href}>
+              <span>
+                <span class={`t${w.placeholder ? ' placeholder' : ''}`}>
+                  {w.title}{w.anchor && <span class="arrow"> →</span>}
+                </span>
+                {w.desc && <span class="desc">{w.desc}</span>}
+              </span>
+              <span class="m">{w.meta}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </div>
+</Base>

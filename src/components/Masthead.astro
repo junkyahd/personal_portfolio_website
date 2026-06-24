@@ -1,0 +1,19 @@
+---
+const { active = '' } = Astro.props;
+const items = [
+  { href: '/', label: 'Home', key: 'home' },
+  { href: '/writing', label: 'Writing', key: 'writing' },
+  { href: '/projects', label: 'Projects', key: 'projects' },
+  { href: '/about', label: 'About', key: 'about' },
+];
+---
+<div class="masthead">
+  <div class="inner">
+    <a class="name" href="/">Jake Boersma</a>
+    <nav>
+      {items.map((it) => (
+        <a href={it.href} class={active === it.key ? 'active' : ''}>{it.label}</a>
+      ))}
+    </nav>
+  </div>
+</div>
